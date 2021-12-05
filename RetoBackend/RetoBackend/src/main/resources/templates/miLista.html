@@ -1,28 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PelisGatunas</title>
-        <link th:href ="@{/css/Archivo.css}" rel="stylesheet"/>
+    <head th:insert="~{fragments/head.html :: head}">
     </head>
-
     <body>
-        <header>
-            <div class="top">
-                <div class="logo">
-                    <img class="logoWeb" th:src="@{|/images/LogoCatMovies.jpg|}" alt="logo de la web">
-                </div>
-                <div class="container">
-                    <p class="headerP"><a th:href="@{|/movies|}">
-                        Meowies
-                    </a></p>
-                </div>
-            </div>
-            <hr>
-        </header>
-
+        <div th:replace="~{fragments/body.html :: body}">
+        </div>
         <main>
             <div class="columnas">
                 <div class="divsMovies" th:each="movie : ${myListMovies}"
