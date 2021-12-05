@@ -64,7 +64,7 @@ public class ProductosController {
 
     private Productos FindProductoByIdProducto(int idProducto) {
         for (Productos producto : productos) {
-            if (producto.IdProducto == idProducto) {
+            if (producto.getIdProducto() == idProducto) {
                 return producto;
             }
         }
