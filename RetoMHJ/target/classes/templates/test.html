@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    
+<body>
+    <script>
+        function changeLanguage(value){
+            window.location.replace(`/test?lang=${value}`)
+        }
+        </script>
+    <h1 th:text="#{Main.Movies}"></h1>
+    <span th:text = "#{lang.change}"></span>:
+    <select id= "locales" onchange="changeLanguage(value)">
+        <option value= ""></option>
+        <option value="es" th:text="#{lang.es}"></option>
+        <option value="en" th:text="#{lang.en}"></option>
+        <option value="fr" th:text="#{lang.fr}"></option>
+        <option value="jp" th:text="#{lang.jp}"></option>
+    </select>
+</body>
+</html>

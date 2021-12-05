@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PelisGatunas</title>
+        <link th:href ="@{/css/Archivo.css}" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <header>
+            <div class="top">
+                <div class="logo">
+                    <img class="logoWeb" th:src="@{|/images/LogoCatMovies.jpg|}" alt="logo de la web">
+                </div>
+                <div class="container">
+                    <p class="headerP"><a th:href="@{|/movies|}">
+                        Meowies
+                    </a></p>
+                </div>
+            </div>
+            <hr>
+        </header>
+
+        <main>
+            <div class="divsMovies">
+                <div class="imgMovie">
+                    <a th:href="@{|/movies/detail/*{id}|}">
+                        <img  width="210" th:src="@{|/images/*{id}.jpg|}"/>
+                    </a> 
+                </div>
+                <div class="titleDetails">
+                    <span class="parpadea text" th:if="${movie.year == 2021}"><strong>¡NOVEDAD!</strong><br></span>
+                    <span class="bodyStyle titulin" th:text="${movie.title} "></span>
+                    <br>
+                    <span class="bodyStyle" th:text="${movie.year}"></span>  
+                    <br>
+                    <p th:text="${movie.description}"></p>
+                </div> 
+                <div class="actionButtons">
+                    <a th:href="@{|/movies/miLista|}" class="buttonAction" style="color: #FF1177" extraInfo="${id}">
+                        MiLista
+                    </a>
+                    <a th:href="@{|/movies/detail/*{id}|}" class="buttonAction" style="color: rgb(255, 81, 0)" extraInfo="${id}">
+                        Añadir a lista
+                    </a>
+                    <a th:href="@{|/movies|}" class="buttonAction" style="color: orange" extraInfo="${id}">
+                        Home
+                    </a>   
+                </div>         
+            </div>
+            <hr>
+        </main>
+    
+<!--
+        <div class="columnas">
+            
+            <div class="divsMovies" th:each="movie : ${movies}"
+                th:object="${movie}">
+                <div class="imgMovie">
+                    <a th:href="@{|/movies/detail/*{id}|}">
+                        <img width="150" th:src="@{|images/*{id}.jpg|}"/>
+                    </a>
+                </div>
+                <div class="titleMovie">
+                    <span class="parpadea text" th:if="${movie.year == 2021}"><strong>¡NOVEDAD!</strong><br></span>
+                    <div th:switch="${movie.tipoPelicula}">
+                        <span id="miedo" th:case="'Miedo'" class="bodyStyle titulin tipoPeliMiedo" th:text="*{title} "></span> 
+                        <span id="accion" th:case="'Accion'" class="bodyStyle titulin tipoPeliAccion" th:text="*{title} "></span> 
+                        <span id="aventuras" th:case="'Aventuras'" class="bodyStyle titulin tipoPeliAventuras" th:text="*{title} "></span> 
+                        <span id="familiar" th:case="'Familiar'" class="bodyStyle titulin tipoPeliFamiliar" th:text="*{title} "></span> 
+                        <span id="musical" th:case="'Musical'" class="bodyStyle titulin tipoPeliMusical" th:text="*{title} "></span> 
+                    </div>
+                    <br>
+                    <span class="bodyStyle" th:text="*{year}"></span>
+                    <br>
+                </div>
+                <div class="actionButtons">
+                    <a th:href="@{|/movies/miLista|}" class="buttonAction" style="color: #FF1177" extraInfo="${id}">
+                        MiLista
+                    </a>
+                    <a th:href="@{|/movies/detail/*{id}|}" class="buttonAction" style="color: rgb(255, 81, 0)" extraInfo="${id}">
+                        Añadir a lista
+                    </a>
+                    <a th:href="@{|/movies/detail/*{id}|}" class="buttonAction" style="color: orange" extraInfo="${id}">
+                        Detalles
+                    </a>   
+                </div>
+            </div>
+        </div>
+-->
+
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="row">
+                <div class="column left">
+                    <img class="logoWeb" src="../static/images/FooterCat.jpg"
+                    th:src="@{|/images/FooterCat.jpg|}"  alt="footer de la web">
+                </div>
+                <div class="column right">
+                    <div class="textoFormulario">
+                        <p>Gracias por visitar Meowies, contacte con nosotros usando el formulario del siguiente enlace si necesita ayuda</p>
+                    </div>
+                    <div class="linkFormulario">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
+                        Formulario
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
+
+
