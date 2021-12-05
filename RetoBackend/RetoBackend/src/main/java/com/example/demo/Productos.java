@@ -11,6 +11,7 @@ public class Productos {
         this.Precio = precio;
         this.IdProducto = idProducto;
         this.Img = img;
+
     }
 
     public int getIdProducto() {

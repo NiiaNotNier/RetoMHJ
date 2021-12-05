@@ -35,7 +35,7 @@ public class ProductosController {
     }
 
     @GetMapping("Productos")
-    public List<Productos> GetProductos() {
+    public List<Productos> GetAllProductos() {
         return productos;
     }
 
@@ -44,7 +44,7 @@ public class ProductosController {
         return FindProductoByNombreProducto(NombreProducto);
     }
 
-    public static Productos FindProductobyNombre(String NombreProducto) {
+    public static Productos FindProductoByNombreProducto(String NombreProducto) {
         for (Productos producto : productos) {
             if (producto.getNombreProducto() == NombreProducto) {
                 return producto;
@@ -53,14 +53,18 @@ public class ProductosController {
         throw new ElementNotFoundException();
     }
 
-    private static Productos FindProductoByNombreProducto(String NombreProducto) {
-        return null;
-    }
-
-    // findProductobyPrecio
     public static Productos FindProductoByPrecio(double precio) {
         for (Productos producto : productos) {
             if (producto.getPrecio() == precio) {
+                return producto;
+            }
+        }
+        throw new ElementNotFoundException();
+    }
+
+    private Productos FindProductoByIdProducto(int idProducto) {
+        for (Productos producto : productos) {
+            if (producto.IdProducto == idProducto) {
                 return producto;
             }
         }
@@ -73,20 +77,20 @@ public class ProductosController {
         return newProducto;
     }
 
-    // @PutMapping("/Productos/{NombreProducto}")
+    // @PutMapping("/Productos/{idProducto}")
     @PutMapping("/Productos/{idProducto}")
     public Productos updateProductos(@PathVariable("idProducto") int idProducto, @RequestBody Productos updateProducto)
             throws Exception {
-        Productos m = FindProductobyNombreProducto(NombreProducto);
+        Productos m = FindProductoByIdProducto(idProducto);
         m.setPrecio(updateProducto.getPrecio());
         return m;
     }
 
-    // @DeleteMapping("/Productos/{NombreProducto}")
-    @DeleteMapping("/Productos/{NombreProducto}")
-    public Productos DeleteProducto(@PathVariable("NombreProducto") String NombreProducto) {
-        Productos producto = FindProductobyNombreProducto(NombreProducto);
-        productos.remove(NombreProducto);
+    // @DeleteMapping("/Productos/{idProducto}")
+    @DeleteMapping("/Productos/{idProducto}")
+    public Productos DeleteProducto(@PathVariable("idProducto") int idProducto) {
+        Productos producto = FindProductoByIdProducto(idProducto);
+        productos.remove(idProducto);
         return producto;
     }
 
