@@ -1,8 +1,12 @@
-package com.example.demo;
+package com.example.demo.Controllers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.example.demo.Models.ElementNotFoundException;
+import com.example.demo.Models.Pedidos;
+import com.example.demo.Models.Productos;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -41,4 +45,5 @@ public class PedidosController {
         }
         throw new ElementNotFoundException();
     }
+
 }
