@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,8 +28,8 @@ public class PedidosController {
         return pedidos;
     }
 
-    @GetMapping("Pedidos/{id}")
-    public static Pedidos GetPedidosById(int idPedido) {
+    @GetMapping("Pedidos/{idPedido}")
+    public static Pedidos GetPedidosById(@PathVariable("idPedido") int idPedido) {
         return FindPedidosById(idPedido);
     }
 
