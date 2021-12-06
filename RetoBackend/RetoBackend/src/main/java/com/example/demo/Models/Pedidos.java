@@ -1,15 +1,17 @@
 package com.example.demo;
 
-import java.sql.Date;
-
 public class Pedidos {
     public int IdPedido;
     public int CantProductos;
-    public Date FechaCreacion;
+    public String FechaCreacion;
     public String NombreUsuario;
     public String Estado;
 
+<<<<<<< HEAD:RetoBackend/RetoBackend/src/main/java/com/example/demo/Pedidos.java
     public Pedidos(int idPedido, int cantProductos, Date fechaCreacion, String nombreUsuario, String estado) {
+=======
+    public Pedidos(int idPedido, int cantProductos, String fechaCreacion, String nombreUsuario, String estado) {
+>>>>>>> 9092fd4a071119367fa1039a4676c0c7701c669f:RetoBackend/RetoBackend/src/main/java/com/example/demo/Models/Pedidos.java
         IdPedido = idPedido;
         CantProductos = cantProductos;
         FechaCreacion = fechaCreacion;
@@ -25,11 +27,11 @@ public class Pedidos {
         CantProductos = cantProductos;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return FechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         FechaCreacion = fechaCreacion;
     }
 
