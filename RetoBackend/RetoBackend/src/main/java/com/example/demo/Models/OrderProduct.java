@@ -1,5 +1,1 @@
-package com.example.demo;
-
-public class OrderProduct extends Productos {
-
-}
+package com.example.demo.Models;
