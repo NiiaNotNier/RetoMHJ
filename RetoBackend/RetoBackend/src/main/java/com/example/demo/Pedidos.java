@@ -9,7 +9,8 @@ public class Pedidos {
     public String NombreUsuario;
     public String Estado;
 
-    public Pedidos(int IdPedido, int cantProductos, Date fechaCreacion, String nombreUsuario, String estado) {
+    public Pedidos(int idPedido, int cantProductos, Date fechaCreacion, String nombreUsuario, String estado) {
+        IdPedido = idPedido;
         CantProductos = cantProductos;
         FechaCreacion = fechaCreacion;
         NombreUsuario = nombreUsuario;
@@ -55,5 +56,4 @@ public class Pedidos {
     public void setIdPedido(int idPedido) {
         IdPedido = idPedido;
     }
-
 }
