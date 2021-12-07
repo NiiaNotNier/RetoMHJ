@@ -13,7 +13,7 @@ public class ProductosViewController {
 
     // añadido de "movies" para ver si funcionaba (no lo hace)
     @GetMapping("/productos")
-    public ModelAndView GetMovies() {
+    public ModelAndView GetProductos() {
         ModelAndView m = new ModelAndView("listProducts");
         m.addObject("productos", ProductosController.productos);
         return m;
