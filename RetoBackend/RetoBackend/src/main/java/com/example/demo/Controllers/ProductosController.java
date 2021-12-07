@@ -31,6 +31,7 @@ public class ProductosController {
             new Productos(10, "Cable", 25.95, "", 10)));
 
     public static ArrayList<Productos> productosMyList = new ArrayList(Arrays.asList());
+    public static ArrayList<Productos> shoppingList = new ArrayList<>(Arrays.asList());
 
     @GetMapping("ProductosMyList")
     public List<Productos> GetProductosMyList() {
@@ -65,7 +66,7 @@ public class ProductosController {
         throw new ElementNotFoundException();
     }
 
-    private Productos FindProductoByIdProducto(int idProducto) {
+    public static Productos FindProductoByIdProducto(int idProducto) {
         for (Productos producto : productos) {
             if (producto.getIdProducto() == idProducto) {
                 return producto;

@@ -11,6 +11,8 @@ import com.example.demo.Models.Productos;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -44,6 +46,13 @@ public class PedidosController {
             }
         }
         throw new ElementNotFoundException();
+    }
+
+    @PostMapping("/v2/Pedidos")
+    public Pedidos AddPedidos(@RequestBody Pedidos newPedido) {
+        pedidos.add(new Pedidos(newPedido.getIdPedido(), newPedido.getCantProductos(),
+                newPedido.getFechaCreacion(), newPedido.getEstado(), newPedido.getNombreUsuario()));
+        return newPedido;
     }
 
 }
