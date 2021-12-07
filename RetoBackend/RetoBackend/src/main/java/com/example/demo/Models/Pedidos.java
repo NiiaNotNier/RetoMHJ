@@ -7,6 +7,9 @@ public class Pedidos {
     public String NombreUsuario;
     public String Estado;
 
+    public Pedidos() {
+    }
+
     public Pedidos(int idPedido, int cantProductos, String fechaCreacion, String nombreUsuario, String estado) {
         IdPedido = idPedido;
         CantProductos = cantProductos;

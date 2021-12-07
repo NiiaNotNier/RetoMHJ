@@ -8,10 +8,12 @@ import com.example.demo.Models.ElementNotFoundException;
 import com.example.demo.Models.Pedidos;
 import com.example.demo.Models.Productos;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,4 +57,30 @@ public class PedidosController {
         return newPedido;
     }
 
+    @PutMapping("/v2/Pedidos/{id}")
+    public Pedidos UpdatePedidos(@RequestBody Pedidos updatePedidos,
+            @PathVariable("idPedido") int idPedido) throws Exception {
+        Pedidos p = FindPedidosById(idPedido);
+        p.setCantProductos((updatePedidos.getCantProductos()));
+        p.setIdPedido(updatePedidos.getIdPedido());
+        return p;
+    }
+
+    @DeleteMapping("/v2/Pedidos/{id}")
+    public void DeletePedidos(@PathVariable("idPedidos") int idPedidos) throws Exception {
+        Pedidos p = FindPedidosById(idPedidos);
+        pedidos.remove(p);
+    }
+
+    public static ArrayList<Pedidos> getPedidosByProductId(int idPedido) {
+        ArrayList<Pedidos> p = pedidos;
+        if (idPedido != 0) {
+            p = new ArrayList<Pedidos>();
+            for (Pedidos pedido : pedidos) {
+                if (pedido.getIdPedido() == idPedido)
+                    p.add(pedido);
+            }
+        }
+        return p;
+    }
 }
