@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.example.demo.Models.ElementNotFoundException;
 import com.example.demo.Models.Pedidos;
 import com.example.demo.Models.Productos;
@@ -37,8 +40,16 @@ public class PedidosController {
     }
 
     @GetMapping("Pedidos/{idPedido}")
-    public static Pedidos GetPedidosById(@PathVariable("idPedido") int idPedido) {
-        return FindPedidosById(idPedido);
+    public static Pedidos GetPedidosById(@PathVariable("idPedido") int idPedido, HttpServletRequest request,
+            HttpServletResponse response) {
+        // Error con los HttpServletRequest y HttpServletResponse
+        var p = FindPedidosById(idPedido);
+        if (p == null) {
+            response.setStatus(
+                    HttpServletResponse.SC_NOT_FOUND);
+
+        }
+        return p;
     }
 
     public static Pedidos FindPedidosById(int idPedido) {
@@ -72,7 +83,7 @@ public class PedidosController {
         pedidos.remove(p);
     }
 
-    public static ArrayList<Pedidos> getPedidosByProductId(int idPedido) {
+    public static ArrayList<Pedidos> getPedidosByIdPedido(int idPedido) {
         ArrayList<Pedidos> p = pedidos;
         if (idPedido != 0) {
             p = new ArrayList<Pedidos>();
