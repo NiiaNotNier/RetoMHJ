@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:insert="~{fragments/head.html :: head}">
-    </head>
+
+<head th:insert="~{fragments/head.html :: head}">
+</head>
 
 <body>
     <div th:replace="~{fragments/body.html :: body}">
@@ -9,19 +10,12 @@
     <main>
         <div class="columnasMain">
             <div class="columnas">
-                <div class="divsProduct" th:each="movie : ${movies}" th:object="${movie}">
+                <div class="divsProduct" th:each="producto : ${productos}" th:object="${producto}">
                     <div class="titleProduct">
-                        <div th:switch="${movie.tipoPelicula}">
-                            <span id="miedo" th:case="'Miedo'" class="bodyStyle titulin tipoPeliMiedo" th:text="*{title} "></span>
-                            <span id="accion" th:case="'Accion'" class="bodyStyle titulin tipoPeliAccion" th:text="*{title} "></span>
-                            <span id="aventuras" th:case="'Aventuras'" class="bodyStyle titulin tipoPeliAventuras" th:text="*{title} "></span>
-                            <span id="familiar" th:case="'Familiar'" class="bodyStyle titulin tipoPeliFamiliar" th:text="*{title} "></span>
-                            <span id="musical" th:case="'Musical'" class="bodyStyle titulin tipoPeliMusical" th:text="*{title} "></span>
-                        </div>
                     </div>
                     <div class="divImgProduct">
-                        <a th:href="@{|/movies/detail/*{id}|}">
-                            <img class="imgProduct" th:src="@{|images/*{id}.jpg|}" />
+                        <a th:href="@{|/producto/detail/*{id}|}">
+                            <img class="imgProduct" th:object="${producto.imgProducto}" />
                         </a>
                     </div>
                     <div class="price">

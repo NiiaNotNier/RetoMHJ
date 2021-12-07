@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.example.demo.Pedidos;
+
 import com.example.demo.Models.ElementNotFoundException;
-import com.example.demo.Models.Productos;
+import com.example.demo.Models.Pedidos;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
