@@ -10,21 +10,27 @@
     <main>
         <div class="columnasMain">
             <div class="columnas">
+                <!-- D I V - P R O D U C T O S -->
                 <div class="divsProduct" th:each="producto : ${productos}" th:object="${producto}">
+                    <!-- N O M B R E -->
                     <div class="titleProduct">
+                        <span class="bodyStyle titulin tipoPeliMiedo" th:text="*{nombreProducto} "></span>
                     </div>
+                    <!-- I M A G E N -->
                     <div class="divImgProduct">
-                        <a th:href="@{|/producto/detail/*{id}|}">
-                            <img class="imgProduct" th:object="${producto.imgProducto}" />
-                        </a>
+                        <img class="imgProduct" th:href="${producto.img}" />
+                        <!-- th:href ? -->
                     </div>
+                    <!-- P R E C I O -->
                     <div class="price">
-                        <span class="bodyStyle" th:text="'$' + *{year}"></span>
+                        <span class="bodyStyle" th:text="'$' + *{precio}"></span>
                     </div>
                     <div class="buttonsProduct">
+                        <!-- C A N T I D A D -->
                         <div class="inputCantidad">
                             <input id="myText" type="0" />
                         </div>
+                        <!-- A Ñ A D I R   A L   C A R R I T O -->
                         <div class="buttonAddToCart">
                             <a th:text="#{save}" th:href="@{'/myList/add?id=' + *{id}}" role="button" onclick="" class="buttonAction">
                                 Añadir a la lista

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductosController {
     public static ArrayList<Productos> productos = new ArrayList(Arrays.asList(
 
-            new Productos(1, "Teclado", 25.95, "", 1),
+            new Productos(1, "Teclado", 25.95, "https://images.app.goo.gl/ShV6fW7dJT7cgWeH8", 1),
             new Productos(2, "Mouse", 25.95, "", 2),
             new Productos(3, "Monitor", 25.95, "", 3),
             new Productos(4, "Impresora", 25.95, "", 4),
