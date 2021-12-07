@@ -1,10 +1,7 @@
-package com.example.demo.ViewControllers;
+package com.example;
 
 import java.util.ArrayList;
 
-import com.example.demo.Controllers.PedidosController;
-import com.example.demo.Controllers.ProductosController;
-import com.example.demo.Models.Pedidos;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import org.springframework.web.bind.annotation.GetMapping;

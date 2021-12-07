@@ -1,11 +1,8 @@
-package com.example.demo.Controllers;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.example.demo.Models.ElementNotFoundException;
-import com.example.demo.Models.Productos;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

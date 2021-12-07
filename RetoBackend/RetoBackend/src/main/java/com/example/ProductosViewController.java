@@ -1,6 +1,4 @@
-package com.example.demo.ViewControllers;
-
-import com.example.demo.Controllers.ProductosController;
+package com.example;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
