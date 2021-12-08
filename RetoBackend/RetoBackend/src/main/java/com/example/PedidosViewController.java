@@ -2,8 +2,6 @@ package com.example;
 
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
