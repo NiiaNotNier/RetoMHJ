@@ -5,15 +5,15 @@
 </head>
 
 <body>
-    <!--
-    <div th:replace="~{fragments/bodysHeader.html :: body}">
+
+    <div th:replace="~{fragments/bodysHeader.html :: header}">
     </div>
-    -->
+
     <main>
 
         <div class="columnasMain">
             <div class="columnas">
-                <!--
+
                 <div class="divsProduct" th:each="producto : ${productos}" th:object="${producto}">
 
                     <div class="titleProduct">
@@ -22,7 +22,7 @@
 
 
                     <div class="divImgProduct">
-                        <img class="imgProduct" th:href="${producto.img}" />
+                        <img class="imgProduct" th:src="${producto.img}" />
 
                     </div>
 
@@ -36,37 +36,37 @@
                         </div>
 
                         <div class="buttonAddToCart">
-                            <a th:text="#{save}" th:href="@{'/myList/add?id=' + *{id}}" role="button" onclick="" class="buttonAction">
+                            <a th:text="#{save}" th:href="@{'/myList/add?idProducto=' + *{idProducto}}" role="button" onclick="" class="buttonAction">
                                 Añadir a la lista
                             </a>
                         </div>
-                -->
-            </div>
-        </div>
-        </div>
-        <div class="columnaCarrito">
-            <div class="carrito">
-                <div class="carritoCart">
-                    <p>Shopping Cart</p>
-                </div>
-                <hr>
-                <div class="carritoTotal">
-                    <p>Total: $472</p>
-                </div>
-                <hr class="hrTotal">
-                <div class="carritoList">
-                    <p>Items bought:</p>
-                    <ul>
-                        <li>Game Console - 1 pcs.</li>
-                        <li>Sofa - 2 pcs.</li>
-                        <li>Beer - 24 pcs.</li>
-                    </ul>
-                </div>
-                <div class="carritoCheckout">
-                    <button class="button">Checkout</button>
+
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="columnaCarrito">
+                <div class="carrito">
+                    <div class="carritoCart">
+                        <p>Shopping Cart</p>
+                    </div>
+                    <hr>
+                    <div class="carritoTotal">
+                        <p>Total: $472</p>
+                    </div>
+                    <hr class="hrTotal">
+                    <div class="carritoList">
+                        <p>Items bought:</p>
+                        <ul>
+                            <li>Game Console - 1 pcs.</li>
+                            <li>Sofa - 2 pcs.</li>
+                            <li>Beer - 24 pcs.</li>
+                        </ul>
+                    </div>
+                    <div class="carritoCheckout">
+                        <button class="button">Checkout</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

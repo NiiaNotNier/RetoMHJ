@@ -3,12 +3,10 @@ package com.example;
 public class OrderProduct {
 
     public int IdPedido;
-
     public String Productos;
-
     public int CantProductos;
 
-    public OrderProduct(int idPedido, String productos, int cantProductos) {
+    public OrderProduct(int idPedido,  String productos, int cantProductos) { //int idProducto?
         IdPedido = idPedido;
         Productos = productos;
         CantProductos = cantProductos;
