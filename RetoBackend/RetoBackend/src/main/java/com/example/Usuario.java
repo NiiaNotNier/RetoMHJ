@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package com.example;
 
 public class Usuario {
 

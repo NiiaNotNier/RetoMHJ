@@ -1,11 +1,8 @@
-package com.example.demo.Controllers;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.example.demo.ElementNotFoundException;
-import com.example.demo.Models.Productos;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductosController {
     public static ArrayList<Productos> productos = new ArrayList(Arrays.asList(
 
-            new Productos(1, "Teclado", 25.95, "", 1),
+            new Productos(1, "Teclado", 25.95, "https://images.app.goo.gl/xwnFYdSjZ7JVXFpC6", 1),
             new Productos(2, "Mouse", 25.95, "", 2),
             new Productos(3, "Monitor", 25.95, "", 3),
             new Productos(4, "Impresora", 25.95, "", 4),
@@ -31,6 +28,7 @@ public class ProductosController {
             new Productos(10, "Cable", 25.95, "", 10)));
 
     public static ArrayList<Productos> productosMyList = new ArrayList(Arrays.asList());
+    public static ArrayList<Productos> shoppingList = new ArrayList<>(Arrays.asList());
 
     @GetMapping("ProductosMyList")
     public List<Productos> GetProductosMyList() {
@@ -65,7 +63,7 @@ public class ProductosController {
         throw new ElementNotFoundException();
     }
 
-    private Productos FindProductoByIdProducto(int idProducto) {
+    public static Productos FindProductoByIdProducto(int idProducto) {
         for (Productos producto : productos) {
             if (producto.getIdProducto() == idProducto) {
                 return producto;

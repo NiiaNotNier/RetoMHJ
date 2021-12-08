@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package com.example;
 
 public class Pedidos {
     public int IdPedido;
@@ -7,7 +7,11 @@ public class Pedidos {
     public String NombreUsuario;
     public String Estado;
 
+    public Pedidos() {
+    }
+
     public Pedidos(int idPedido, int cantProductos, String fechaCreacion, String nombreUsuario, String estado) {
+
         IdPedido = idPedido;
         CantProductos = cantProductos;
         FechaCreacion = fechaCreacion;
@@ -54,5 +58,4 @@ public class Pedidos {
     public void setIdPedido(int idPedido) {
         IdPedido = idPedido;
     }
-
 }
