@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:insert="~{fragments/head.html :: head}">
-    </head>
+
+<head th:insert="~{fragments/head.html :: head}">
+</head>
 
 <body>
-    <div th:replace="~{fragments/body.html :: body}">
+
+    <div th:replace="~{fragments/bodysHeader.html :: header}">
     </div>
+
     <main>
+
         <div class="columnasMain">
             <div class="columnas">
-                <div class="divsProduct" th:each="movie : ${movies}" th:object="${movie}">
+
+                <div class="divsProduct" th:each="producto : ${productos}" th:object="${producto}">
+
                     <div class="titleProduct">
-                        <div th:switch="${movie.tipoPelicula}">
-                            <span id="miedo" th:case="'Miedo'" class="bodyStyle titulin tipoPeliMiedo" th:text="*{title} "></span>
-                            <span id="accion" th:case="'Accion'" class="bodyStyle titulin tipoPeliAccion" th:text="*{title} "></span>
-                            <span id="aventuras" th:case="'Aventuras'" class="bodyStyle titulin tipoPeliAventuras" th:text="*{title} "></span>
-                            <span id="familiar" th:case="'Familiar'" class="bodyStyle titulin tipoPeliFamiliar" th:text="*{title} "></span>
-                            <span id="musical" th:case="'Musical'" class="bodyStyle titulin tipoPeliMusical" th:text="*{title} "></span>
-                        </div>
+                        <span class="bodyStyle titulin tipoPeliMiedo" th:text="*{nombreProducto} "></span>
                     </div>
+
+
                     <div class="divImgProduct">
-                        <a th:href="@{|/movies/detail/*{id}|}">
-                            <img class="imgProduct" th:src="@{|images/*{id}.jpg|}" />
-                        </a>
+                        <img class="imgProduct" th:src="${producto.img}" />
+
                     </div>
+
                     <div class="price">
-                        <span class="bodyStyle" th:text="'$' + *{year}"></span>
+                        <span class="bodyStyle" th:text="'$' + *{precio}"></span>
                     </div>
                     <div class="buttonsProduct">
+
                         <div class="inputCantidad">
                             <input id="myText" type="0" />
                         </div>
+
                         <div class="buttonAddToCart">
-                            <a th:text="#{save}" th:href="@{'/myList/add?id=' + *{id}}" role="button" onclick="" class="buttonAction">
+                            <a th:text="#{save}" th:href="@{'/myList/add?idProducto=' + *{idProducto}}" role="button" onclick="" class="buttonAction">
                                 Añadir a la lista
                             </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -64,6 +69,8 @@
             </div>
         </div>
     </main>
+
 </body>
+
 
 </html>

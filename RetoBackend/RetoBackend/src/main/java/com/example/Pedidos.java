@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package com.example;
 
 public class Pedidos {
     public int IdPedido;
@@ -7,11 +7,11 @@ public class Pedidos {
     public String NombreUsuario;
     public String Estado;
 
-<<<<<<< HEAD:RetoBackend/RetoBackend/src/main/java/com/example/demo/Pedidos.java
-    public Pedidos(int idPedido, int cantProductos, Date fechaCreacion, String nombreUsuario, String estado) {
-=======
+    public Pedidos() {
+    }
+
     public Pedidos(int idPedido, int cantProductos, String fechaCreacion, String nombreUsuario, String estado) {
->>>>>>> 9092fd4a071119367fa1039a4676c0c7701c669f:RetoBackend/RetoBackend/src/main/java/com/example/demo/Models/Pedidos.java
+
         IdPedido = idPedido;
         CantProductos = cantProductos;
         FechaCreacion = fechaCreacion;
