@@ -34,9 +34,8 @@
                         <div class="inputCantidad">
                             <input id="myText" type="0" />
                         </div>
-
-                        <div class="buttonAddToCart">
-                            <a th:text="#{save}" th:href="@{'/myList/add?idProducto=' + *{idProducto}}" role="button" onclick="" class="buttonAction">
+                            <a name = "" th:text="#{save}" th:href="@{'/myList/add?idProducto=' + *{idProducto}}"
+                            role="button" onclick="" class="buttonAction" style="color: rgb(255, 81, 0)">
                                 Añadir a la lista
                             </a>
                         </div>
