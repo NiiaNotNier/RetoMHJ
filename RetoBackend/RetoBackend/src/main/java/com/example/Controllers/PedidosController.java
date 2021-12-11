@@ -2,14 +2,7 @@ package com.example.Controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.example.ElementNotFoundException;
-import com.example.OrderProduct;
-import com.example.Pedidos;
-import com.example.Models.OrderStatus;
+import com.example.Models.Pedidos;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +41,7 @@ public class PedidosController {
                 return pedido;
             }
         }
-        throw new ElementNotFoundException();
+        return null;
     }
 
     @GetMapping("/v2/Pedidos/new")
@@ -84,7 +77,7 @@ public class PedidosController {
         return p;
     }
 
-    @GetMapping("/v2/Pedidos/{idPedido}/Favoritos/new/{idProducto}")
+    @GetMapping("/v2/Pedidos/{idPedido}/Favoritos/add/{idProducto}")
     public static Pedidos addProductoAFavoritos(@PathVariable("idPedido")int idPedido, @PathVariable("idProducto") int idProducto) {
         PedidosController.GetPedidosById(idPedido).listaFavoritos.add(ProductosController.FindProductoByIdProducto(idProducto));
         return pedidos.get(idPedido); //devuelve el ultimo elemento de la lista (el que hemos añadido)
@@ -109,7 +102,7 @@ public class PedidosController {
     public static void deleteProductoFromPedidos(@PathVariable("idPedido")int idPedido, 
                                                  @PathVariable("idProducto") int idProducto) {
         try{
-            PedidosController.GetPedidosById(idPedido).productitos.remove(ProductosController.FindProductoByIdProducto(idProducto));
+            PedidosController.GetPedidosById(idPedido).restarCantidadOfProducto(ProductosController.FindProductoByIdProducto(idProducto));
         }catch(Exception e){
             
         }

@@ -1,7 +1,6 @@
-package com.example;
+package com.example.Models;
 
 public class OrderProduct {
-
 
     public Productos Productos;
     public int CantProductos;
@@ -29,6 +28,10 @@ public class OrderProduct {
 
     public void autoCantidad(){
         CantProductos++;
+    }
+
+    public void restaCantidad(){
+        CantProductos--;
     }
 
 }
