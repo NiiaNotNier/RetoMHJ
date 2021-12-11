@@ -1,9 +1,7 @@
-package com.example;
+package com.example.Models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-
-import com.example.Models.OrderStatus;
 
 
 public class Pedidos {
@@ -11,12 +9,16 @@ public class Pedidos {
     public String FechaCreacion;
     public String NombreUsuario;
     public OrderStatus Estado;
+    public double PrecioTotal;
+    public static int contadorIdPedido;
 
     public ArrayList<OrderProduct> productitos;
     public ArrayList<Productos> listaFavoritos;
 
 
     public Pedidos() {
+        IdPedido = contadorIdPedido;
+        contadorIdPedido++;
         productitos = new ArrayList<OrderProduct>();
         listaFavoritos = new ArrayList<Productos>();
         FechaCreacion = Calendar.getInstance().getTime().toString();
@@ -24,8 +26,9 @@ public class Pedidos {
         Estado = OrderStatus.PENDIENTE;
     }
 
-    public Pedidos(int idPedido, String fechaCreacion, String nombreUsuario, OrderStatus estado) {
-        IdPedido = idPedido;
+    public Pedidos(String fechaCreacion, String nombreUsuario, OrderStatus estado) {
+        IdPedido = contadorIdPedido;
+        contadorIdPedido++;
         FechaCreacion = fechaCreacion;
         NombreUsuario = nombreUsuario;
         Estado = OrderStatus.PENDIENTE;
@@ -80,13 +83,34 @@ public class Pedidos {
         this.listaFavoritos = listaFavoritos;
     }
 
+    public  double getPrecioTotal() {
+        return PrecioTotal;
+    }
+
+    public  void setPrecioTotal(double precioTotal) {
+        PrecioTotal = precioTotal;
+    }
+
+
     public void addCantidadOfProducto(Productos producto){
         for (OrderProduct orderProduct : productitos) {
             if(orderProduct.getProductos().IdProducto == producto.IdProducto){
                 orderProduct.autoCantidad();
+                PrecioTotal += producto.Precio;
                 return;
             }    
         }
         productitos.add(new OrderProduct(producto, 1));
+        PrecioTotal += producto.Precio;
+    }
+
+    public void restarCantidadOfProducto(Productos producto){
+        for(OrderProduct orderProduct : productitos){
+            if(orderProduct.getProductos().IdProducto == producto.IdProducto && orderProduct.CantProductos > 0){
+                orderProduct.restaCantidad();
+                PrecioTotal -= producto.Precio;
+                return;
+            }
+        }
     }
 }
