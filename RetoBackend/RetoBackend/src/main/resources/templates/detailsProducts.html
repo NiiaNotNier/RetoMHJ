@@ -8,17 +8,17 @@
     <main>
         <div class="divsProductos">
             <div class="divImgProduct">
-                <img class="imgProduct" th:text="${producto.Img}" />
+                <img class="imgProduct" th:text="${producto.img}" />
             </div>
             <div class="detalleProdcuto">
-                <span class="bodyStyle titulin" th:text="${producto.NombreProducto} "></span>
+                <span class="bodyStyle titulin" th:text="${producto.nombreProducto} "></span>
                 <br>
-                <span class="bodyStyle" th:text="'$' + *{producto.Precio}"></span>
+                <span class="bodyStyle" th:text="'$' + *{producto.precio}"></span>
                 <br>
-                <p th:text="${pedido.FechaCreacion}"></p>
-                <p th:text="${pedido.CantProductos}"></p>
-                <p th:text="${pedido.NombreUsuario}"></p>
-                <p th:text="${pedido.Estado}"></p>
+                <p th:text="${pedido.fechaCreacion}"></p>
+                <p th:text="${pedido.cantProductos}"></p>
+                <p th:text="${pedido.nombreUsuario}"></p>
+                <p th:text="${pedido.estado}"></p>
             </div>
         </div>
         <ul th:class="list-group">

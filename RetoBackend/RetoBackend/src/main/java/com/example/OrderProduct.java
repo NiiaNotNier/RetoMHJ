@@ -2,29 +2,20 @@ package com.example;
 
 public class OrderProduct {
 
-    public int IdPedido;
-    public String Productos;
+
+    public Productos Productos;
     public int CantProductos;
 
-    public OrderProduct(int idPedido,  String productos, int cantProductos) { //int idProducto?
-        IdPedido = idPedido;
+    public OrderProduct(Productos productos, int cantProductos) { //int idProducto?
         Productos = productos;
         CantProductos = cantProductos;
     }
 
-    public int getIdPedido() {
-        return IdPedido;
-    }
-
-    public void setIdPedido(int idPedido) {
-        IdPedido = idPedido;
-    }
-
-    public String getProductos() {
+    public Productos getProductos() {
         return Productos;
     }
 
-    public void setProductos(String productos) {
+    public void setProductos(Productos productos) {
         Productos = productos;
     }
 
@@ -34,6 +25,10 @@ public class OrderProduct {
 
     public void setCantProductos(int cantProductos) {
         CantProductos = cantProductos;
+    }
+
+    public void autoCantidad(){
+        CantProductos++;
     }
 
 }

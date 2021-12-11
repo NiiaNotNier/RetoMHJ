@@ -34,38 +34,56 @@
                         <div class="inputCantidad">
                             <input id="myText" type="0" />
                         </div>
+                        <form th:action="@{'/myList/add?idProducto=' + *{idProducto}}" th:object="${producto}" method="POST"></form>
+                        <p><input type=submit th:value="#{save}"></p>
+
+                        <a name="" id="" th:action="@{'/pedidos/{idPedido}/add/{idProducto}}" th:text="#{save}" th:href="@{|/pedidos|}" role="button" class="buttonAction" style="color: rgb(255, 81, 0)">
+                            Añadir a la lista
+                        </a>
+
+                        <form th:action="@{/v2/Pedidos}" th:object="${producto}" method="POST"></form>
+                        <p><input type=submit th:value="#{cart}"></p>
+                        <!--
                             <a name = "" th:text="#{save}" th:href="@{'/myList/add?idProducto=' + *{idProducto}}"
                             role="button" onclick="" class="buttonAction" style="color: rgb(255, 81, 0)">
                                 Añadir a la lista
-                            </a>
-                        </div>
+                            </a>-->
+                    </div>
 
-                    </div>
                 </div>
             </div>
-            <div class="columnaCarrito">
-                <div class="carrito">
-                    <div class="carritoCart">
-                        <p>Shopping Cart</p>
+        </div>
+        <div class="columnaCarrito">
+            <div class="carrito">
+                <div class="carritoCart">
+                    <p>Shopping Cart</p>
+                </div>
+                <hr>
+                <div class="carritoTotal">
+                    <p>Total: $472</p>
+                </div>
+                <hr class="hrTotal">
+                <div class="carritoList">
+                    <p>Items bought:</p>
+
+
+                    <ul th:each="pedido : ${pedidos}" th:object="${pedido}">
+                        <li th:text="*{nombreUsuario}" th:value="#{nombreUsuario}"></li>
+                    </ul>
+
+
+                    <div class="divsProduct" th:each="pedido : ${pedidos}" th:object="${pedido}">
+                        <div class="titleProduct">
+                            <span th:text="*{estado}"></span>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="carritoTotal">
-                        <p>Total: $472</p>
-                    </div>
-                    <hr class="hrTotal">
-                    <div class="carritoList">
-                        <p>Items bought:</p>
-                        <ul>
-                            <li>Game Console - 1 pcs.</li>
-                            <li>Sofa - 2 pcs.</li>
-                            <li>Beer - 24 pcs.</li>
-                        </ul>
-                    </div>
-                    <div class="carritoCheckout">
-                        <button class="button">Checkout</button>
-                    </div>
+
+                </div>
+                <div class="carritoCheckout">
+                    <button class="button">Checkout</button>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 

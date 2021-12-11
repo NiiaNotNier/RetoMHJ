@@ -5,22 +5,20 @@ public class Productos {
     public String NombreProducto;
     public double Precio;
     public String Img;
-    public int IdPedido;
 
-    public Productos(int idProducto, String nombreProducto, double precio, String img, int idPedido) {
+    public Productos() {
+    }
+    
+    public Productos(int idProducto, String nombreProducto, double precio, String img) {
         this.NombreProducto = nombreProducto;
         this.Precio = precio;
         this.IdProducto = idProducto;
         this.Img = img;
-        this.IdPedido = idPedido;
     }
 
-    public int getIdPedido() {
-        return IdPedido;
-    }
-
-    public void setIdPedido(int idPedido) {
-        IdPedido = idPedido;
+    public Productos(String nombreProducto, double precio) {
+        this.NombreProducto = nombreProducto;
+        this.Precio = precio;
     }
 
     public int getIdProducto() {
@@ -55,7 +53,6 @@ public class Productos {
         Img = img;
     }
 
-    public Productos() {
-    }
+   
 
 }

@@ -21,12 +21,16 @@ public class MyListProductosController {
         return productosMyList;
     }
 
+    
+
     @PostMapping("/myList/add/{idProducto}")
-    public Productos add(@PathVariable("idProducto") int idProducto) {
-        // compartimos nuestro listado para coger la info de ese metodo
-        Productos p = ProductosController.FindProductoByIdProducto(idProducto);
-        productosMyList.add(p);
-        return p;
+    public String Add(@RequestBody Productos newPedido){
+        productosMyList.add(new Productos(newPedido.getIdProducto(), 
+                                            newPedido.getNombreProducto(), 
+                                            newPedido.getPrecio(), 
+                                            newPedido.getImg()));
+        return "redirect:/productosMyList";
+        
     }
 
     @DeleteMapping("/myList/{idProducto}")
