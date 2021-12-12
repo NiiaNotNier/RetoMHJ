@@ -28,19 +28,26 @@
                         <span class="bodyStyle" th:text="'$' + *{precio}"></span>
                     </div>
 
-                    <div class="buttonsProduct">
-                        <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/add/*{idProducto}|}">
-                            <Button th:text="#{addWhise}" style="width:80px"></Button>
-                        </a>
-                        <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/remove/*{idProducto}|}">
-                            <Button th:text="#{removeWhise}" style="width:80px"></Button>
-                        </a>
-                        <a th:href="@{|/pedidos/${pedido.idPedido}/add/*{idProducto}|}">
-                            <Button th:text="#{addCart}" style="width:80px"></Button>
-                        </a>
-                        <a th:href="@{|/pedidos/${pedido.idPedido}/remove/*{idProducto}|}">
-                            <Button th:text="#{removeCart}" style="width:80px"></Button>
-                        </a>
+                    <div class="buttonsProduct" style="text-align: center;">
+                        <div style="display: grid;">
+                            <h2>Favoritos</h2>
+                            <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/add/*{idProducto}|}">
+                                <Button th:text="#{addWhise}" style="width:80px; background-color: rgb(189, 5, 189);"></Button>
+                            </a>
+                            <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/remove/*{idProducto}|}">
+                                <Button th:text="#{removeWhise}" style="width:80px; background-color: rgb(189, 5, 189);"></Button>
+                            </a>
+                        </div>
+                        <div style="display: grid;">
+                            <h2>Carrito</h2>
+                            <a th:href="@{|/pedidos/${pedido.idPedido}/add/*{idProducto}|}">
+                                <Button th:text="#{addCart}" style="width:80px; background-color: orange;"></Button>
+                            </a>
+                            <a th:href="@{|/pedidos/${pedido.idPedido}/remove/*{idProducto}|}">
+                                <Button th:text="#{removeCart}" style="width:80px; background-color: orange;"></Button>
+                            </a>
+                        </div>
+
                     </div>
 
                 </div>
@@ -81,17 +88,21 @@
                         </a>
                     </div>
                 </div>
+                <a th:href="@{|/pedidos|}" style="margin-left: 35%">
+                    <Button th:text="#{showOrders}" style="width:80px; background-color: orange;"></Button>
+                </a>
+                <div class="columnaFavoritos">
+                    <h1>F A V O R I T O S</h1>
+                    <div th:each="producto : ${pedido.listaFavoritos}" th:object="${producto}">
+                        <span th:text="'ID: ' +  ${producto.idProducto}"></span>
+                        <span th:text="'   ' + ${producto.nombreProducto}"></span>
+                        <span th:text="'   ' + ${producto.precio} + '$'"></span>
+                    </div>
+                </div>
             </div>
 
         </div>
-        <div class="columnaFavoritos">
-            <h1>F A V O R I T O S</h1>
-            <div th:each="producto : ${pedido.listaFavoritos}" th:object="${producto}">
-                <span th:text="'ID: ' +  ${producto.idProducto}"></span>
-                <span th:text="'   ' + ${producto.nombreProducto}"></span>
-                <span th:text="'   ' + ${producto.precio} + '$'"></span>
-            </div>
-        </div>
+
     </main>
 
 </body>

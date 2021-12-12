@@ -20,6 +20,14 @@ public class PedidosViewController {
         return m;
     }
 
+    @GetMapping("/pedidos")
+    public ModelAndView VerPedidos(){
+        ModelAndView m = new ModelAndView("verPedidos");
+        m.addObject("pedido", PedidosController.getAllPedidos());
+        m.addObject("productos", ProductosController.productos);
+        return m;
+    }
+
     @GetMapping("/pedidos/{idPedido}")
     public ModelAndView GetAllPedidos(
         @RequestParam(name = "idPedido", required = false, defaultValue = "0") int idPedido) {

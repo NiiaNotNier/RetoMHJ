@@ -28,6 +28,11 @@ public class PedidosController {
         return pedidos;
     }
 
+    @GetMapping("/v2/pedidos")
+    public static Pedidos getAllPedidos(){
+        return PedidosController.getAllPedidos();
+    }
+
     @GetMapping("Pedidos/{idPedido}")
     public static Pedidos GetPedidosById(@PathVariable("idPedido") int idPedido) {
         // Error con los HttpServletRequest y HttpServletResponse
@@ -107,4 +112,6 @@ public class PedidosController {
             
         }
     }
+
+    
 }
