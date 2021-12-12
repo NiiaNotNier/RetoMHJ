@@ -1,0 +1,200 @@
+/* GENERAL */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* HEADER */
+
+.logoWeb {
+    height: 50px;
+    border-radius: 30%;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    text-align: center;
+}
+
+.container {
+    margin-left: 10%;
+}
+
+.menuLink {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+@font-face {
+    font-family: 'Monoton';
+    font-style: normal;
+    font-weight: 20;
+    src: local('Monoton'), local('Monoton-Regular'), url(http://themes.googleusercontent.com/static/fonts/monoton/v4/AKI-lyzyNHXByGHeOcds_w.woff) format('woff');
+}
+
+header {
+    background-color: darkslategray;
+}
+
+
+/* MAIN */
+
+main {
+    background-color: whitesmoke;
+    padding-bottom: 2%;
+}
+
+.columnasMain {
+    display: grid;
+    grid-template-columns: 82% 18%;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+}
+
+.divsProduct {
+    margin: 2% 10%;
+    border: 1px solid black;
+}
+
+.titleProduct {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5% 0%;
+    background-color: gainsboro;
+}
+
+.divImgProduct {
+    text-align: center;
+    padding-top: 4%;
+}
+
+.imgProduct {
+    width: 200px;
+    height: 100px;
+}
+
+.price {
+    text-align: center;
+}
+
+.buttonsProduct {
+    display: grid;
+    grid-template-columns: 33% 66%;
+}
+
+.inputCantidad input {
+    margin-left: 25%;
+    height: 30px;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.buttonAddToCart {
+    background-color: #465dc5;
+    height: 30px;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.buttonAction {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding-top: 4%;
+    padding-left: 15%;
+}
+
+.columnasCarrito {
+    text-align: end;
+}
+
+.carrito {
+    background-color: #923838;
+    margin-top: 2%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.hrTotal {
+    width: 80%;
+}
+
+.carritoCart {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.carritoTotal {
+    margin-left: 10%;
+}
+
+.carritoList {
+    color: white;
+    margin-left: 10%;
+}
+
+.carritoCheckout {
+    text-align: center;
+}
+
+.button {
+    border: none;
+    color: black;
+    padding: 10px 30%;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.divsDetails {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 2%;
+}
+
+.titleDetails {
+    text-align: left;
+    margin-top: 15%;
+}
+
+.bodyStyle {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.titulin {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+    color: white;
+}
+
+.text {
+    font-size: 28px;
+    font-family: helvetica;
+    font-weight: bold;
+    color: orange;
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+}
+
+.columnaFavoritos {
+    text-align: center;
+}

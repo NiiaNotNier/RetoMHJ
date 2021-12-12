@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head.html :: head}">
+</head>
+
+<body>
+    <div th:replace="~{fragments/bodysHeader.html :: header}">
+    </div>
+    <main>
+        <div class="columnasMain">
+            <div class="columnas">
+                <div class="divsProduct" th:each="producto : ${productos}" th:object="${producto}">
+                    <div class="titleProduct">
+                        <span class="bodyStyle titulin" th:text="*{nombreProducto} "></span>
+                    </div>
+                    <div class="divImgProduct">
+                        <img class="imgProduct" th:src="*{Img}" />
+                    </div>
+                    <div class="price">
+                        <span class="bodyStyle" th:text="'$' + *{precio}"></span>
+                    </div>
+                    <div class="buttonsProduct">
+                        <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/add/*{idProducto}|}">
+                            <Button th:text="#{addWhise}" style="width:80px"></Button>
+                        </a>
+                        <a th:href="@{|/pedidos/${pedido.idPedido}/favoritos/remove/*{idProducto}|}">
+                            <Button th:text="#{removeWhise}" style="width:80px"></Button>
+                        </a>
+                        <a th:href="@{|/pedidos/${pedido.idPedido}/add/*{idProducto}|}">
+                            <Button th:text="#{addCart}" style="width:80px"></Button>
+                        </a>
+                        <a th:href="@{|/pedidos/${pedido.idPedido}/remove/*{idProducto}|}">
+                            <Button th:text="#{removeCart}" style="width:80px"></Button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a th:href="@{|/|}">
+                <Button th:text="#{home}" style="width:80px"></Button>
+            </a>
+        </div>
+    </main>
+</body>
+
+
+</html>
