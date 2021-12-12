@@ -18,15 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductosController {
     public static ArrayList<Productos> productos = new ArrayList(Arrays.asList(
 
-            new Productos(1, "Teclado", 24, "https://images.app.goo.gl/xwnFYdSjZ7JVXFpC6"),
-            new Productos(2, "Mouse", 15, ""),
-            new Productos(3, "Monitor", 210, ""),
-            new Productos(4, "Impresora", 115, ""),
-            new Productos(5, "Proyector", 180, ""),
-            new Productos(6, "Pantalla", 300, ""),
-            new Productos(7, "Móvil", 360.00, ""),
-            new Productos(8, "Tablet", 80.00, ""),
-            new Productos(9, "Laptop", 500.00, "")));
+            new Productos(1, "Teclado", 24, "https://img.icons8.com/emoji/96/000000/keyboard-emoji.png"),
+            new Productos(2, "Mouse", 15, "https://img.icons8.com/office/80/000000/mouse.png"),
+            new Productos(3, "Monitor", 210, "https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-screen-ecommerce-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"),
+            new Productos(4, "Impresora", 115, "https://img.icons8.com/color/96/000000/printer-door-open.png"),
+            new Productos(5, "Proyector", 180, "https://img.icons8.com/office/80/000000/video-projector.png"),
+            new Productos(6, "Pantalla", 300, "https://img.icons8.com/fluency/96/000000/widescreen-tv.png"),
+            new Productos(7, "Móvil", 360.00, "https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/000000/external-phone-essentials-icongeek26-outline-gradient-icongeek26.png"),
+            new Productos(8, "Tablet", 80.00, "https://img.icons8.com/color/96/000000/smartphone-tablet.png"),
+            new Productos(9, "Laptop", 500.00, "https://img.icons8.com/fluency/96/000000/laptop.png")));
 
     public static ArrayList<Productos> productosMyList = new ArrayList(Arrays.asList());
     public static ArrayList<Productos> shoppingList = new ArrayList<>(Arrays.asList());
